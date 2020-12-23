@@ -153,5 +153,15 @@ vector<double> getXY(double s, double d, const vector<double> &maps_s,
 
   return {x,y};
 }
+double MPH2mps(double speed){
+    return speed * 0.44704;
+}
+double wrappedDistance(double back_s, double front_s) {
+  double distance = (front_s - back_s + 6945.554) - 6945.554;
 
+  if (distance < 0) {
+    distance = 6945.554 + distance;
+  }
+  return distance;
+}
 #endif  // HELPERS_H
